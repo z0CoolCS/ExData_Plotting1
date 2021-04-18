@@ -17,7 +17,7 @@ df_sub2 <- df[,c("Data_Time","Sub_metering_2")]
 df_sub3 <- df[,c("Data_Time","Sub_metering_3")]
 
 
-par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
+par(mfrow = c(2, 2), mar = c(4, 4, 1, 1), oma = c(0, 0, 2, 0))
 
 plot(df$Data_Time,df$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 
@@ -27,6 +27,7 @@ plot(df$Data_Time,df$Voltage, type="l", xlab = "datetime", ylab="Voltage")
 plot(df_sub1$Data_Time,df_sub1$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(df_sub2$Data_Time,df_sub2$Sub_metering_2, col = "red")
 lines(df_sub3$Data_Time,df_sub3$Sub_metering_3, col = "blue")
+legend("topright", pch = 95, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = .35)
 
 plot(df$Data_Time,df$Global_reactive_power, type="l", xlab = "datetime", ylab="Global_reactive_power")
 
